@@ -10,41 +10,30 @@
 //Iteration 4
 // If there is no text in the item field OR the info field, the Add Snack button should be disabled
 
+//Iteration 5
+// When a user clicks the card, it will randomly select a new background color for the card
+
 
 var addSnackBtn = document.getElementById('add-btn')
 var snackName = document.getElementById('snack-name')
 var snackInfo = document.getElementById('snack-desc')
-// var cardColors = ['red', 'blue', 'green', 'yellow', 'orange']
-// var newSnack = document.querySelector('new');
-
 var clickSection = document.querySelector('body')
 
 clickSection.addEventListener('click', function(event) {
   event.preventDefault();
   if (snackName.value === "" || snackInfo.value === "") {
-    // addSnackBtn.disabled = true;
     return;
   }
   if (event.target.className === 'add-btn') {
 	createCard();
   }
   if (event.target.className === 'delete') {
-    // event.target.parentNode.parentNode.remove();
     deleteCard();
-
-    // event.target.parentNode.remove();
   }
   if (event.target.classList.contains('new-card')) {
-    // event.target.parentNode.parentNode.remove();
     changeColor();
-
-  // if (event.target.className === )
 }
 })
-
-// addSnackBtn.addEventListener('click', createCard)
-// deleteSnackBtn.addEventListener('click', deleteCard)
-// var deleteSnackBtn = document.querySelector('delete');
 
 function createCard (e) {
 	event.preventDefault();
@@ -70,22 +59,5 @@ function createCard (e) {
       var y = Math.floor(Math.random() * 256);
       var z = Math.floor(Math.random() * 256);
       var newColor = "rgb(" + x + "," + y + "," + z + ")";
-      // console.log(newColor);
       event.target.style.background = newColor;
-      // document.body.style.background = newColor;
       }
-
-  // changeColor();
-
-// function changeColor (e) {
-//   event.preventDefault();
-//   var color = cardColors[Math.floor(Math.random() * cardColors.length)];
-//   // if event.target.classList.contains('.new-card') {
-//     document.querySelector('new-card').style.backgroundcolor = color;}
-
-
-
-
-
-//Iteration 5
-// When a user clicks the card, it will randomly select a new background color for the card
